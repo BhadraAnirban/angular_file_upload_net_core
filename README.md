@@ -116,3 +116,24 @@ We can call the Proceed function on some other button call. That's why I have se
 ### Notice: .bind(this) is used to access the component's other methods.
 
 
+
+If you are using ConvertFileInByte in Angular 11, then the return type in the typescript is mentioned below -
+
+```
+@Injectable({
+  providedIn: 'root'
+})
+export class CommonService {
+
+  constructor(private http: HttpClient) { }
+  ConvertFileInByte(data: any) {
+    return this.http.post<FileInByteType>('Common/ConvertFileInByte', data);
+  }
+}
+
+export class FileInByteType{
+  fileName: string;
+  data: any[];
+}
+
+```
